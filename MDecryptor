@@ -1,0 +1,88 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace MDecrypter {
+
+class MDecrypter {
+
+public static void Main(){
+
+
+char[] _Alphabets = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','&','!','~','2','3','4','5','6','7','8','9','@','0','$','%','*','#','/','|',')'};
+
+ArrayList finalDecryptedText = new ArrayList();
+
+Console.WriteLine("Enter the text you wanna decrypt :-");
+string userInput = Console.ReadLine();
+char[] list_Alphabets = userInput.ToCharArray();
+
+for(int n=0; n<= list_Alphabets.Length-1;n++){
+
+for(int i=2; i<= _Alphabets.Length-1;i++){
+if(list_Alphabets[n] == _Alphabets[i]){
+
+
+int decryptionIndex = i-2;
+//Console.WriteLine("{0} is actually {1}",list_Alphabets[n],_Alphabets[decryptionIndex]);
+finalDecryptedText.Add(_Alphabets[decryptionIndex]);
+
+
+}
+
+
+
+}
+if(list_Alphabets[n] == ' '){
+  finalDecryptedText.Add(' ');
+}
+
+
+
+
+
+}
+
+
+Console.WriteLine("");
+Console.WriteLine("Decrypted text is :- ");
+for(int count =0;count<=finalDecryptedText.Count-1;count++){
+Console.Write(finalDecryptedText[count]);
+
+
+
+}
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+}

@@ -1,0 +1,56 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+
+namespace MEncryptor {
+
+class MEncryptor {
+
+public static void Main(){
+string input;
+int n;
+char[] Alphabets = {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','1','&','!','~','2','3','4','5','6','7','8','9','@','0','$','%','*','#','/','|',')'};
+ArrayList finalEncryptedText = new ArrayList();
+
+Console.WriteLine("Enter anything that you wanna encrypt ( Don't use | or ) symbols ) :");
+
+input = Console.ReadLine();
+
+char[] listAlphabets = input.ToCharArray();
+for(n=0;n<=listAlphabets.Length-1;n++){
+
+for(int i=0;i<=Alphabets.Length-1;i++){
+if(listAlphabets[n] == Alphabets[i]){
+
+
+int encryptedIndex = i+2; //take the letter which is two letter forwards, its a simple encryption :):)
+
+//Console.WriteLine("{0} is encrypted as {1}",listAlphabets[n],Alphabets[encryptedIndex]);
+finalEncryptedText.Add(Alphabets[encryptedIndex]);
+
+}
+}
+
+if (listAlphabets[n] == ' ') {
+  finalEncryptedText.Add(' ');
+}
+       }
+
+
+
+
+Console.WriteLine("");
+Console.WriteLine("Encrypted Text Is :-");
+for(int count =0; count<=finalEncryptedText.Count-1;count++){
+  Console.Write(finalEncryptedText[count]);
+}
+Console.WriteLine(" ");
+}
+
+
+
+}
+
+
+
+}
